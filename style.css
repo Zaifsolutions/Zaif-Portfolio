@@ -147,71 +147,195 @@ section{
     background: var(--gradient-white-bg2);
 }
 
-.img-hero {
-  position: relative;
-  width: 350px;
-  height: 350px;
-  margin: auto;
+.hero-info{
+    margin-top: 3rem;
 }
 
-/* ye ring ke andar image rakhne ke liye */
-.circle-ring {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  border-radius: 50%;
-  overflow: hidden; /* important */
-  z-index: 1;
+.hero-info h3{
+    color: var(--font-color);
+    font-weight: 300;
+    text-transform: uppercase;
+    font-size: 1.1rem;
 }
 
-.circle-ring img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  border-radius: 50%;
-  display: block;
+.hero-info h1{
+    font-size: 3.5rem;
 }
 
-/* rotating ring text ke liye */
-.rotate-text {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 2;
-  pointer-events: none;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.text-animate{
+    width: 22.8rem;
+    position: relative;
 }
 
-.rotate-text span {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  border: 6px solid #ffffff;
-  border-radius: 50%;
+.text-animate h2{
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    color: transparent;
+    -webkit-text-stroke: 0.1vw #770753;
+    background: var(--gradient-color-bg);
+    background-repeat: no-repeat;
+    -webkit-background-clip: text;
+    background-position: 0 0;
+    transition: .6s;
+    letter-spacing: 2px;
+    animation: moveText 3s linear infinite;
+    animation-delay: 2s;
 }
 
-.rotate-text span::before {
-  content: "";
-  position: absolute;
-  inset: 10px;
-  border-radius: 50%;
-  background: transparent;
+.text-animate h2::before{
+    content: "";
+    position: absolute;
+    top: 7px;
+    left: -3px;
+    width: 0;
+    height: 70%;
+    border-right: 2px solid var(--main-color);
+    animation: moveCursorText 3s linear infinite;
+    animation-delay: 2s;
 }
 
-.rotate-text .text {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  animation: rotateText 30s linear infinite;
+
+.hero-info p{
+    font-size: .9rem;
+    color: var(--font-color);
+    line-height: 1.5rem;
 }
 
-@keyframes rotateText {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+.btn-box{
+    display: flex;
+    justify-content: space-between;
+    width: 320px;
+    margin-top: 2rem;
+    margin-bottom: 6rem;
+}
+
+.btn-box .btn{
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+}
+
+.btn-box .d-CV{
+    background: var(--gradient-white-bg2);
+    padding: 10px;
+    border-radius: 5px;
+    font-weight: 500;
+    color: #000;
+    box-shadow: rgba(60,64,67,0.3)0px 1px 2px 0,
+                  rgba(60,64,67,0.15)0px 2px 6px 2px;
+    transition: all .3s ease;              
+}
+
+.social-media{
+    display: flex;
+    justify-content: space-between;
+    width: 220px;
+    height: 45px;
+}
+
+.social-media a{
+    width: 42px;
+    height: 42px;
+    font-size: 1.5rem;
+    color: var(--main-color);
+    background: #fff;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    transition: .4s;
+    border-radius: 50%;
+    z-index: 1;
+}
+
+
+.social-media a:hover{
+    background: var(--gradient-color-bg);
+    color: #fff;
+}
+
+.bg-icon{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.bg-icon span{
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    background: var(--gradient-color-bg);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: animate 1s linear infinite;
+}
+
+.img-hero{
+    position: relative;
+    animation: floatImage 4s ease-in-out infinite;
+    animation-delay: 3s;
+}
+
+.img-hero img{
+    position: relative;
+    width: 400px;
+    height: auto;
+    z-index: 10;
+}
+
+.rotate-text{
+    position: absolute;
+    top: 4%;
+    left: -53px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    padding: 2rem;
+}
+
+.rotate-text span{
+    position: relative;
+    width: 442px;
+    height: 442px;
+    background: red;
+    border: 6px solid #eaeef0;
+    border-radius: 50%;
+    z-index: 1;
+    overflow: hidden;
+}
+
+.rotate-text span::before{
+    content: "";
+    position: absolute;
+    inset: 20px;
+    background: #00aaff;
+    border-radius: 50%;
+    z-index: 1;
+}
+
+.rotate-text span i{
+    position: absolute;
+    inset: 0;
+    background: var(--gradient-color-bg);
+    filter: blur(5px);
+    animation: animate 2s linear infinite;
+}
+
+
+.rotate-text .text{
+    position: absolute;
+    width: 490px;
+    height: 490px;
+    background: #f2f6fb;
+    border-radius: 50%;
+    box-shadow: 0 1px 6px 5.94px rgba(0,0,0,0.2);
+    animation: rotateText 30s linear infinite;
 }
 
 .text b{
@@ -968,4 +1092,4 @@ footer{
         width: 100%;
         padding: 13px;
     }
-}
+} 
